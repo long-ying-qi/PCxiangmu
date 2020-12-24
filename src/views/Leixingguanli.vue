@@ -6,7 +6,7 @@
                 <li>>></li>
                 <li>商品</li>
                 <li>>></li>
-                <li>品牌管理</li>
+                <li>类型管理</li>
             </ul>
         </div>
         <div id="big-box">

@@ -6,195 +6,109 @@
                 <li>>></li>
                 <li>商品</li>
                 <li>>></li>
-                <li>商品管理</li>
+                <li>商品咨询</li>
             </ul>
         </div>
         <div id="big-box">
-            <p>分类列表</p>
-            <div class="left-box01">
-                <p><i class="el-icon-loading"></i>&nbsp;刷新</p>
-                <el-tree
-                :data="data"
-                show-checkbox
-                node-key="id"
-                :default-expanded-keys="[2, 3]"
-                :default-checked-keys="[5]"
-                :props="defaultProps">
-                </el-tree>
+            <p>订单列表</p>
+            <div class="big-input">
+                咨询人：
+                <el-input class="buttonVal" v-model="input" placeholder="请输入内容"></el-input>
+                咨询商品：
+                <el-input class="buttonVal" v-model="input" placeholder="请输入内容"></el-input>
+                <div class="block">
+                    <span class="demonstration">咨询时间：</span>
+                    <el-date-picker
+                    v-model="value1"
+                    type="date"
+                    placeholder="选择日期">
+                    </el-date-picker>
+                </div>
+                <div class="block">
+                    <span class="demonstration">----</span>
+                    <el-date-picker
+                    v-model="value1"
+                    type="date"
+                    placeholder="选择日期">
+                    </el-date-picker>
+                </div>
+                <el-button class="buttonVal01" type="primary">查询</el-button>
             </div>
-            <div class="right-box01">
-                <div class="box-top">
-                    <p>商品分类：<span>所有分类</span><el-button id="butVal" type="primary">添加分类</el-button></p>
-                </div>
-                <div class="box02">
+            <div class="box02">
+                <el-checkbox v-model="checked"></el-checkbox>
+                <span class="sp">ID</span>
+                <span class="sp">咨询时间</span>
+                <span class="sp">咨询商品</span>
+                <span class="sp">咨询人</span>
+                <span class="sp">操作</span>
+            </div>
+            <div class="box02">
                     <el-checkbox v-model="checked"></el-checkbox>
-                    <span class="sp">ID</span>
-                    <span class="sp">分类名称</span>
-                    <span class="sp">访问路径</span>
-                    <span class="sp">商品类型</span>
-                    <span class="sp">排序</span>
-                    <span class="sp">操作</span>
-                </div>
-                <div class="box02">
-                    <el-checkbox v-model="checked"></el-checkbox>
-                    <span class="sp01">1</span>
-                    <span class="sp01">数码</span>
-                    <span class="sp01">shuma</span>
-                    <span class="sp01">3100</span>
+                    <span class="sp01">27</span>
+                    <span class="sp01">2018-07-27</span>
+                    <span class="sp01">奥克斯（AUX）1.5匹 变频 冷暖电辅 二级能效 壁挂式空调</span>
+                    <span class="sp01">test1</span>
                     <span class="sp01"><el-button type="primary" icon="el-icon-edit" circle></el-button> <el-button type="danger" icon="el-icon-delete" circle></el-button></span>
                 </div>
                 <div class="box02">
                     <el-checkbox v-model="checked"></el-checkbox>
-                    <span class="sp01">1</span>
-                    <span class="sp01">数码</span>
-                    <span class="sp01">shuma</span>
-                    <span class="sp01">3100</span>
+                    <span class="sp01">27</span>
+                    <span class="sp01">2018-07-27</span>
+                    <span class="sp01">奥克斯（AUX）1.5匹 变频 冷暖电辅 二级能效 壁挂式空调</span>
+                    <span class="sp01">test1</span>
                     <span class="sp01"><el-button type="primary" icon="el-icon-edit" circle></el-button> <el-button type="danger" icon="el-icon-delete" circle></el-button></span>
                 </div>
                 <div class="box02">
                     <el-checkbox v-model="checked"></el-checkbox>
-                    <span class="sp01">1</span>
-                    <span class="sp01">数码</span>
-                    <span class="sp01">shuma</span>
-                    <span class="sp01">3100</span>
+                    <span class="sp01">27</span>
+                    <span class="sp01">2018-07-27</span>
+                    <span class="sp01">奥克斯（AUX）1.5匹 变频 冷暖电辅 二级能效 壁挂式空调</span>
+                    <span class="sp01">test1</span>
                     <span class="sp01"><el-button type="primary" icon="el-icon-edit" circle></el-button> <el-button type="danger" icon="el-icon-delete" circle></el-button></span>
-                </div><div class="box02">
+                </div>
+                <div class="box02">
                     <el-checkbox v-model="checked"></el-checkbox>
-                    <span class="sp01">1</span>
-                    <span class="sp01">数码</span>
-                    <span class="sp01">shuma</span>
-                    <span class="sp01">3100</span>
+                    <span class="sp01">27</span>
+                    <span class="sp01">2018-07-27</span>
+                    <span class="sp01">奥克斯（AUX）1.5匹 变频 冷暖电辅 二级能效 壁挂式空调</span>
+                    <span class="sp01">test1</span>
                     <span class="sp01"><el-button type="primary" icon="el-icon-edit" circle></el-button> <el-button type="danger" icon="el-icon-delete" circle></el-button></span>
-                </div><div class="box02">
+                </div>
+                <div class="box02">
                     <el-checkbox v-model="checked"></el-checkbox>
-                    <span class="sp01">1</span>
-                    <span class="sp01">数码</span>
-                    <span class="sp01">shuma</span>
-                    <span class="sp01">3100</span>
+                    <span class="sp01">27</span>
+                    <span class="sp01">2018-07-27</span>
+                    <span class="sp01">奥克斯（AUX）1.5匹 变频 冷暖电辅 二级能效 壁挂式空调</span>
+                    <span class="sp01">test1</span>
                     <span class="sp01"><el-button type="primary" icon="el-icon-edit" circle></el-button> <el-button type="danger" icon="el-icon-delete" circle></el-button></span>
-                </div><div class="box02">
+                </div>
+                <div class="box02">
                     <el-checkbox v-model="checked"></el-checkbox>
-                    <span class="sp01">1</span>
-                    <span class="sp01">数码</span>
-                    <span class="sp01">shuma</span>
-                    <span class="sp01">3100</span>
+                    <span class="sp01">27</span>
+                    <span class="sp01">2018-07-27</span>
+                    <span class="sp01">奥克斯（AUX）1.5匹 变频 冷暖电辅 二级能效 壁挂式空调</span>
+                    <span class="sp01">test1</span>
                     <span class="sp01"><el-button type="primary" icon="el-icon-edit" circle></el-button> <el-button type="danger" icon="el-icon-delete" circle></el-button></span>
                 </div>
                 <div id="butVal01">
                     <el-button plain>保存排序</el-button><el-button plain>批量删除</el-button>
+                    <div class="block">
+                        <span class="demonstration"></span>
+                        <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        :current-page.sync="currentPage2"
+                        :page-sizes="[100, 200, 300, 400]"
+                        :page-size="100"
+                        layout="sizes, prev, pager, next"
+                        :total="1000">
+                        </el-pagination>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </template>
-<script>
-  export default {
-    data() {
-      return {
-          checked: true,
-        data: [{
-          id: 1,
-          label: '日用百货',
-          children: [{
-            id: 4,
-            label: '二级 1-1',
-            children: [{
-              id: 9,
-              label: '三级 1-1-1'
-            }, {
-              id: 10,
-              label: '三级 1-1-2'
-            }]
-          }]
-        }, {
-          id: 2,
-          label: '数码',
-          children: [{
-            id: 5,
-            label: '手机'
-          }, {
-            id: 6,
-            label: '笔记本'
-          }, {
-            id: 6,
-            label: '电脑整机'
-          }, {
-            id: 6,
-            label: '办公'
-          }, {
-            id: 6,
-            label: '摄影摄像'
-          }]
-        }, {
-          id: 3,
-          label: '服装',
-          children: [{
-            id: 7,
-            label: '男装'
-          }, {
-            id: 8,
-            label: '女装'
-          }, {
-            id: 8,
-            label: '童装'
-          }, {
-            id: 8,
-            label: '内衣'
-          }, {
-            id: 8,
-            label: '套装'
-          }]
-        },
-        {
-          id: 3,
-          label: '鞋包配饰',
-          children: [{
-            id: 7,
-            label: '二级 3-1'
-          }, {
-            id: 8,
-            label: '二级 3-2'
-          }]
-        },
-        {
-          id: 3,
-          label: '家居建材',
-          children: [{
-            id: 7,
-            label: '二级 3-1'
-          }, {
-            id: 8,
-            label: '二级 3-2'
-          }]
-        },{
-          id: 3,
-          label: '珠宝手表',
-          children: [{
-            id: 7,
-            label: '二级 3-1'
-          }, {
-            id: 8,
-            label: '二级 3-2'
-          }]
-        }],
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        },
-        options: [
-        {
-          value: "选项1",
-          label: "在售"
-        },
-        {
-          value: "选项2",
-          label: "下架"
-        }
-      ]
-      };
-    }
-  };
-</script>
+
 <style scoped>
 #app{
         background-color: #f0f4f6;  
@@ -229,41 +143,20 @@
         padding-left: 20px;
         background-color: #eceff1;
     }
-    .box-top>p{
-        font-size: 14px
+    .big-input{
+        padding-left: 8px;
     }
-    .box-top>p>span{
-        color: #409eff;
+    .buttonVal{
+        width: 140px;
+        margin-left: 8px;
     }
-    #butVal{
-        /* margin-right: -8px; */
-        margin-left: 700px;
+    .buttonVal01{
+        /* display: block; */
+        margin-left: 18px;
     }
-    #butVal01{
-        margin-top: 8px;
-    }
-    .left-box01{
-        width: 200px;
-        padding-left: 20px;
-        border-right: 1px solid #eaeaea;
-        height: 500px;
-    }
-    .left-box01>p{
-        color: #666;
-    }
-    .right-box01{
-        float: right;
-        width: 938px;
-        /* border: 1px solid red; */
-        /* top: 100px; */
-        margin-top: -500px;
-    }
-    
-    .inp2{
-        width: 80px;
-    }
-    .inp3{
-        width: 80px;
+    .block{
+        display: inline-block;
+        margin-left: 10px;
     }
     .box02{
         height: 65px;
@@ -272,12 +165,13 @@
         border: 1px solid #eaeaea;
         /* margin-top: 5px; */
         position: relative;
+        margin-top: 5px;
     }
     .sp{
-        margin-left: 85px;
+        margin-left: 165px;
         font-weight: 600;
         cursor: pointer;
-        color: #999;
+        color: #666;
     }
     .box02>img{
         width: 40px;
@@ -289,25 +183,26 @@
         top: 15px;
     }
     .sp01{
-        
         cursor: pointer;
         font-size: 13px;
         /* color: #999; */
     }
     .sp01:nth-of-type(1){
-      margin-left: 90px;
+      margin-left: 165px;
     }
     .sp01:nth-of-type(2){
-      margin-left: 110px;
+      margin-left: 140px;
     }
     .sp01:nth-of-type(3){
-      margin-left: 115px;
+      margin-left: 55px;
     }
     .sp01:nth-of-type(4){
-      margin-left: 115px;
+      margin-left: 35px;
     }
-    .sp01:nth-of-type(5){
-      margin-left: 190px;
+   .sp01:nth-of-type(5){
+      margin-left: 145px;
     }
-   
+    #butVal01{
+        padding: 20px;
+    }
 </style>

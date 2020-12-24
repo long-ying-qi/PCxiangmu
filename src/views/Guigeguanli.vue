@@ -6,7 +6,7 @@
                 <li>>></li>
                 <li>商品</li>
                 <li>>></li>
-                <li>品牌管理</li>
+                <li>规格管理</li>
             </ul>
         </div>
         <div id="big-box">
@@ -165,9 +165,7 @@
         /* border: 1px solid red; */
         /* top: 100px; */
         margin-top: 00px;
-    }
-    
-    
+    } 
     .box02{
         height: 65px;
         line-height: 65px;
